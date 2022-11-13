@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{HW2 Computer Org}
+\author{Ayush Krishnappa}
+\date{September 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{3.15.5}
+\begin{itemize}
+  \item a) Performance = $(\frac{Clock\ Rate}{CPI})$ instructions per sec\newline
+  Processor P1 performance = $(\frac{3GHz}{1.5}) = (2 \times 10^9)$ instructions per sec\newline
+  Processor P2 performance = $(\frac{2.5GHz}{1.0}) = (2.5 \times 10^9)$ instructions per sec\newline
+  Processor P3 performance = $(\frac{4.0GHz}{2.2}) = (1.82 \times 10^9)$ instructions per sec\newline
+  From these calculations we can see that P2 has the highest performance in terms of instructions per sec
+  
+  \item b) Number of cycles = $(clock\ rate \times 10)$\ cycles\newline
+  Number of instructions = $\frac{(clock\ rate \times 10)}{CPI}$\newline
+  Processor P1 cycles = $(3GHz \times 10) = (3 \times 10^{10})$ cycles\newline
+  Processor P1 instructions = $\frac{(3GHz \times 10)}{1.5} = (2 \times 10^{10})$ instructions\newline
+  Processor P2 cycles = $(2.5GHz \times 10) = (2.5 \times 10^{10})$ cycles\newline
+  Processor P2 instructions = $\frac{(2.5GHz \times 10)}{1.0} = (2.5 \times 10^{10})$ instructions\newline
+  Processor P3 cycles = $(4GHz \times 10) = (4 \times 10^{10})$ cycles\newline
+  Processor P2 instructions = $\frac{(4.0GHz \times 10)}{2.2} = (1.82 \times 10^{10})$ instructions\newline
+  
+  \item c) Execution time = $\frac{Number\ of\ instructions \times CPI}{Clock\ Rate}$\newline
+  Reduce exec time by 30 percent, increase of 20 percent in CPI value\newline
+  $(Execution\ time \times 0.7) = \frac{Number\ of\ instructions\ \times \ CPI\ \times \ 1.2}{1.71 \times Clock\ Rate}$\newline
+  New Clock Rate = $\frac{Clock\ Rate\ \times \ 1.2}{0.7}$\newline
+  Processor p1 new clock rate = $(3GHz \times 1.71)$ = 5.13 GHz\newline
+  Processor p2 new clock rate = $(2.5GHz \times 1.71)$ = 4.27 GHz\newline
+  Processor p3 new clock rate = $(4GHz \times 1.71)$ = 6.84 GHz\newline
+\end{itemize}
+
+\section{3.15.7}
+\begin{itemize}
+  \item a) Formula for Global CPI = $\Sigma (CPI \times Fi)$, Fi = frequency count of each class\newline
+  Global CPI for p1 = $(1 \times 0.1) + (2 \times 0.2) + (3 \times 0.5) + (3 \times 0.2) = (0.1 + 0.4 + 1.5 + 0.6) = 2.6CPI$\newline
+  Global CPI for p2 = $(2 \times 0.1) + (2 \times 0.2) + (2 \times 0.5) + (2 \times 0.2) = (0.2 + 0.4 + 1 + 0.4) = 2CPI$\newline
+  
+  \item b) CPU clock cycles = $\Sigma (CPI \times Ci)$, Ci = instruction count\newline
+  CPU clock cycles for P1 = $(1 \times 10^5) + (2 \times 2 \times 10^5) + (3 \times 5 \times 10^5) + (3 \times 2 \times 10^5) = 2.6 \times 10^6$\newline
+  CPU clock cycles for P2 = $(2 \times 10^5) + (2 \times 2 \times 10^5) + (2 \times 5 \times 10^5) + (2 \times 2 \times 10^5) = 2 \times 10^6$\newline
+  CPU execution time for P1 = $\frac{2.6 \times 10^5}{2.5 \times GHz} = 1.04 ms$\newline
+  CPU execution time for p2 = $\frac{2 \times 10^5}{3 \times GHz} = 666.67 ms$\newline
+  Therefore, processor p2 is faster
+  
+\end{itemize}
+
+\section{3.15.8}
+\begin{itemize}
+  \item a) CPU time = $(instruction\ count \times CPI \times Clock\ cycle\ time)$\newline
+  CPI = $\frac{cpu\ time}{(instruction\ count \times clock\ cycle\ time)}$\newline
+  Compiler A CPI = $(\frac{1.1}{1.0E9 \times 1.0E-9)} = 1.1$\newline 
+  Compiler B CPI = $(\frac{1.5}{1.2E9 \times 1.0E-9)} = 1.25$\newline
+  
+  \item b) Execution time = $Instruction \times CPI\ clock\ rate$\newline
+  instructions1 x CP11 clock rate1 = instructions2 x CP12 clock rate1\newline
+  $(\frac{10^9 \times 1.1}{1 \times 10^9 \times 1.25}) \times (clockrate2) = 0.73clockrate2$\newline
+  clockrate1 = 0.73clockrate2\newline
+
+  \item c) $CPU \times time_c = 0.66s$\newline
+  $\frac{CPUtime_A}{CPUtime_C}$ = 1.67\newline
+  $\frac{CPUtime_B}{CPUtime_C}$ = 2.27\newline
+  Compiler C is 1.67 times faster then compiler A\newline
+\end{itemize}
+
+\section{3.15.10}
+\begin{itemize}
+    \item a) 1 processor execution time = $(\frac{(2.56E9 \times 1) + (1.28E9 \times 12) + (256 \times 1000000 \times 5)}{2 \times 1000000000}$ = 9.6 seconds\newline
+    \ \\
+    2 processor execution time = $(\frac{(2.56E9 \times 1) + (1.28E9 \times 12)}{0.7 \times 2}) + (256 \times 1000000 \times 5) -> (\frac{14080000000}{2 \times 1000000000})$ = 7.04 seconds\newline
+    Relative speedup from 1 to 2 = $\frac{9.6}{7.04}$ = 1.36\newline
+    \ \\
+    4 processor execution time = $(\frac{(2.56E9 \times 1) + (1.28E9 \times 12)}{0.7 \times 4}) + (256 \times 1000000 \times 5) -> (\frac{7680000000}{2 \times 1000000000})$ = 3.84 seconds\newline
+    Relative speedup from 1 to 4 = $\frac{9.6}{3.84}$ = 2.5\newline
+    \ \\
+    8 processor execution time = $(\frac{(2.56E9 \times 1) + (1.28E9 \times 12)}{0.7 \times 8}) + (256 \times 1000000 \times 5) -> (\frac{4480000000}{2 \times 1000000000})$ = 2.24 seconds\newline
+    Relative speedup from 1 to 8 = $\frac{9.6}{2.24}$ = 4.3\newline
+    
+    \item b) 1 processor execution time = $(\frac{(2.56E9 \times 2) + (1.28E9 \times 12) + (256 \times 1000000 \times 5)}{2 \times 1000000000}$ = 10.88 seconds\newline
+    \ \\
+    2 processor execution time = $(\frac{(2.56E9 \times 2) + (1.28E9 \times 12)}{0.7 \times 2}) + (256 \times 1000000 \times 5) -> (\frac{15900000000}{2 \times 1000000000})$ = 7.95 seconds\newline
+    \ \\
+    4 processor execution time = $(\frac{(2.56E9 \times 2) + (1.28E9 \times 12)}{0.7 \times 4}) + (256 \times 1000000 \times 5) -> (\frac{8600000000}{2 \times 1000000000})$ = 4.3 seconds\newline
+    \ \\
+    8 processor execution time = $(\frac{(2.56E9 \times 2) + (1.28E9 \times 12)}{0.7 \times 8}) + (256 \times 1000000 \times 5) -> (\frac{4940000000}{2 \times 1000000000})$ = 2.47 seconds\newline
+    \ \\
+    
+    \item c) The CPI of load/store instruction should be reduced by 25 percent\newline
+    Using values from part a with 4 processors\newline
+    3.84 = $\frac{(2.56E9 + 1.26E9 \times i) + (2.56E8 \times 5)}{2.0E9}$\newline
+    \ \\
+    i = $\frac{((3.84)(2.0E9) - (2.56E8 \times 5) - (2.56E9))}{1.26E9}$ = 3.047\newline
+    \ \\
+    3.047 / 12 = 0.25\newline
+    
+\end{itemize}
+
+\section{3.15.12}
+\begin{itemize}
+    \item a) CPI = $\frac{(750 sec) \times (3 \times 10^9 s^-1)}{2.389 \times (10)^{12}}$ = 0.9427
+    \item b) SPECratio = $\frac{reference\ time}{measured\ time}$ = $\frac{9650 sec}{750 sec}$ = 12.867
+    \item c) New CPU time = (New instruction count) x (CPI) x (Clock cycle time) = (1.1)(old time) = $(1.1) \times (750)$ = 825 sec
+    \item d) New CPU time = (1.1 x IC) x (1.05 x CPI) x (clock cycle time) = (1.55)(old time) = $(1.155) \times (750)$ = 866.25 sec, increase of 15.5 percent in CPU time
+    \item e) change in SPECratio = (reference time) / (1.55 x measured time) = $\frac{12.867}{1.155}$ = 11.139
+    \item f) CPI = $\frac{(700 sec) \times (4 \times 10^9 cycles*s^-1)}{(0.85)(2.389 \times (10)^{12})}$ = 1.38
+    \item g) Change in CPI = $\frac{1.37 - 0.94}{0.94}$ = 0.43\newline
+    Clock rate change = $\frac{(4.0 \times 10^9) - (3 \times 10^9)}{e \times 10^9}$ = 0.333\newline
+    Instruction count has been reduced so the increase in CPI is similar to that of the clock rate.
+    \item h) Percentage of CPU reduction time = $\frac{750 - 700}{750} \times 100 = 6.66\%$
+    \item i) New execution time = $960 - (960 \times \frac{10}{100})$ = 864\newline
+    Number of instructions = $\frac{864 \times 4 \times 10^9}{1.61} = 2.15 \times (10)^{11}$
+    \item j) New number of instructions = $864 - (864 \times \frac{10}{100}) = 777.6$\newline
+    New Clock rate = $\frac{2.146 \times 10^9 \times 1.61}{864}$ = 3.33 GHz
+    \item k) Reduced Execution time = $960 - 0.2 \times 960$ = 768 sec\newline
+    Reduced CPI = $1.61 - 0.15 \times 1.62$ = 1.37\newline
+    Clock Rate = $\frac{2146 \times 10^9 \times 1.37}{768}$ = 3.82 GHz
+\end{itemize}
+
+\section{3.15.15} 
+\begin{itemize}
+    \item a) Clock Cycle = $(50 \times 10^6 \times 1) + (110 \times 10^6 \times 1) + (80 \times 10^6 \times 4) + (16 \times 10^6 \times 2) + (50 \times 10^6) + (110 \times 10^6) + (320 \times 10^6) + (32 \times 10^6) = 512 \times 10^6 s$\newline
+    \ \\
+    Execution time = clock cycle / clock rate = $\frac{512 \times 10^6}{2 \times 10^9} = 256 \times (10)^{-3}s$ 
+    \ \\
+    $CPI_FPimproved$ =  $\frac{\frac{512 \times 10^6}{2} - ((110 \times 10^6 \times 1) + (80 \times 10^6 \times 4) + (16 \times 10^6 \times 2))}{50 \times 10^6} = -4.12$\newline
+    Since the value is negative, the CPI of FP instructions cannot be improved since the value might be negative when the program runs two times faster. 
+    \item b) CPI (improved FP) =  $\frac{\frac{512 \times 10^6}{2} - ((50 \times 10^6 \times 1) + (110 \times 10^6 \times 1) + (16 \times 10^6 \times 2))}{80 \times 10^6} = \frac{512 - 944}{80} = 0.8$\newline
+    For the program to run two times faster, must improve the CPI of L/S instruction as $\frac{4}{0.8} = 5$\newline
+    Therefore, CPI of L/S instructions must improve by 5 times.
+    \item c) Clock Cycles = $(50 \times 10^6 \times 0.6) + (110 \times 10^6 \times 0.6) + (80 \times 10^6 \times 2.8) + (16 \times 10^6 \times 1.4) = 342.4 \times 10^6$\newline
+    Execution time = $\frac{342.4 \times 10^6}{2 \times 10^9} = 171.2 \times (10)^{-3}$\newline
+    Improving execution time of program by $\frac{0.256}{0.171} = 1.497\ times$
+\end{itemize}
+
+\end{document}
